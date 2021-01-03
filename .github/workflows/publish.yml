@@ -1,0 +1,34 @@
+name: publish
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # "ref" specifies the branch to check out.
+        # "github.event.release.target_commitish" is a global variable and specifies the branch the release targeted
+        ref: ${{ github.event.release.target_commitish }}
+    - uses: actions/setup-node@v1
+      with:
+        registry-url: https://registry.npmjs.org/
+        scope: "@mx-js"
+    - run: npm install
+    - run: git config --global user.name "GitHub CD bot"
+    - run: git config --global user.email "github-cd-bot@mail.com"
+    # upgrade npm version in package.json to the tag used in the release.
+    - run: npm version ${{ github.event.release.tag_name }} --force
+    - run: npm run build
+    - run: npm test
+    - run: npm publish
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+    # push the version changes to GitHub
+    - run: git push
+      env:
+        # The secret is passed automatically. Nothing to configure.
+        github-token: ${{ secrets.GITHUB_TOKEN }}

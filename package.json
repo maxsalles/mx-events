@@ -1,0 +1,43 @@
+{
+  "name": "my-project-name",
+  "version": "0.1.0",
+  "description": "My project description",
+  "main": "src/index.js",
+  "files": [
+    "./src"
+  ],
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --colors",
+    "lint": "./node_modules/.bin/standard \"src/**/*.js\"",
+    "lint:fix": "./node_modules/.bin/standard --fix \"src/**/*.js\"",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxsalles/js-package-template.git"
+  },
+  "keywords": [
+    "node",
+    "template"
+  ],
+  "author": "Max Salles (herond12@gmail.com)",
+  "license": "MIT",
+  "jest": {
+    "transform": {
+      ".*": "<rootDir>/node_modules/babel-jest"
+    }
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.2.2",
+    "jest": "^26.6.3",
+    "standard": "^12.0.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  },
+  "dependencies": {}
+}
