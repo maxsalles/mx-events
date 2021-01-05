@@ -1,10 +1,10 @@
 # MX Mixins
 
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
-[![License](https://img.shields.io/github/license/maxsalles/js-package-template.svg)](LICENSE.md)
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/maxsalles/js-package-template/test/master)](https://github.com/maxsalles/js-package-template/actions?query=workflow%3Alint+branch%3Amaster)
+[![License](https://img.shields.io/github/license/maxsalles/mx-events.svg)](LICENSE.md)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/maxsalles/mx-events/test/master)](https://github.com/maxsalles/mx-events/actions?query=workflow%3Alint+branch%3Amaster)
 
-**Package name** is a (...).
+**MX Events** is a library for generic event handling in JavaScript.
 
 ## Prerequisites
 
@@ -15,18 +15,18 @@ You will need [Node.js](https://nodejs.org/) **version 8+**.
 npm:
 
 ```
-npm install {{package-name}}
+npm install @mx-js/events
 ```
 
 yarn:
 
 ```
-yarn add {{package-name}}
+yarn add @mx-js/events
 ```
 
 ## Usage
 
-...
+Coming soon.
 
 ## Changelog
 
