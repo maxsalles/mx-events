@@ -1,3 +1,3 @@
-import hello from './hello'
+import EventMixin from './EventMixin'
 
-console.log(hello())
+export default EventMixin
