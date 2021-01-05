@@ -1,5 +1,5 @@
 {
-  "name": "@mx-js/mixins",
+  "name": "@mx-js/events",
   "version": "0.1.0",
   "description": "Generic event handling for JavaScript",
   "main": "src/index.js",
