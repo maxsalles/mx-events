@@ -34,7 +34,7 @@ Detailed changes for each release are documented in the [release notes](https://
 
 ## Contact
 
-If you want to contact me you can reach me at <herond@gmail.com>.
+If you want to contact me you can reach me at <herond12@gmail.com>.
 
 ## License
 
