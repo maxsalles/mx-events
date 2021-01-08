@@ -30,7 +30,7 @@ Coming soon.
 
 ## Changelog
 
-Detailed changes for each release are documented in the [release notes](https://github.com/maxsalles/js-package-template/releases).
+Detailed changes for each release are documented in the [release notes](https://github.com/maxsalles/mx-events/releases).
 
 ## Contact
 
