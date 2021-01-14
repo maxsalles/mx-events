@@ -1,6 +1,6 @@
 {
   "name": "@mx-js/events",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Generic event handling for JavaScript",
   "main": "src/index.js",
   "files": [
