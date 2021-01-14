@@ -1,4 +1,7 @@
+jest.mock('../src/handleEventProxies')
+
 import EventMixin from '../src/EventMixin'
+import handleEventProxies from '../src/handleEventProxies'
 
 describe('EventMixin#trigger', () => {
   const ClassWithEvent = EventMixin(class {})
@@ -10,6 +13,7 @@ describe('EventMixin#trigger', () => {
     callback.mockClear()
     otherCallback.mockClear()
     anotherCallback.mockClear()
+    handleEventProxies.mockClear()
   })
 
   it('performs "callback" when "subscription"`s "expression" match with "type"', () => {
@@ -75,6 +79,19 @@ describe('EventMixin#trigger', () => {
       data,
       expect.objectContaining({ subscription, matchArray: expect.any(Array) })
     )
+  })
+
+  it('calls "handleEventProxies"', () => {
+    const object = new ClassWithEvent()
+    const type = 'state.change'
+    const data = {}
+    const thisObject = {}
+    const eventProxies = []
+
+    object.eventProxies = eventProxies
+    object.trigger(type, data, thisObject)
+
+    expect(handleEventProxies).toBeCalledWith(eventProxies, object, type, data, thisObject)
   })
 
   it('returns "this"', () => {

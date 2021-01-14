@@ -1,4 +1,5 @@
 import { EVENT_PROPERTY } from './constants'
+import handleEventProxies from './handleEventProxies'
 
 const EventMixin = Class => class extends Class {
   constructor () {
@@ -23,6 +24,8 @@ const EventMixin = Class => class extends Class {
   }
 
   trigger (type, data, thisObject) {
+    const selectedThisObject = thisObject !== undefined ? thisObject : this
+
     for (const [subscription, { expression, callback }] of this[EVENT_PROPERTY]) {
       const matchArray = (typeof expression === 'string')
         ? expression === type
@@ -31,11 +34,13 @@ const EventMixin = Class => class extends Class {
       if (!matchArray) continue
 
       callback.call(
-        thisObject !== undefined ? thisObject : this,
+        selectedThisObject,
         data,
         { subscription, ...(Array.isArray(matchArray) ? { matchArray } : {}) }
       )
     }
+
+    handleEventProxies(this.eventProxies, this, type, data, selectedThisObject)
 
     return this
   }
