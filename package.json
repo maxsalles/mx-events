@@ -4,7 +4,7 @@
   "description": "Generic event handling for JavaScript",
   "main": "src/index.js",
   "files": [
-    "./src"
+    "src/**/*"
   ],
   "scripts": {
     "test": "jest",
