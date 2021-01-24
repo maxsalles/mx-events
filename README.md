@@ -8,7 +8,7 @@
 
 ## Prerequisites
 
-You will need [Node.js](https://nodejs.org/) **version 8+**.
+You will need [Node.js](https://nodejs.org/) **version 12+**.
 
 ## Instalation
 
